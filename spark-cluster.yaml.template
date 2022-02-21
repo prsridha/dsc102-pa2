@@ -62,7 +62,7 @@ spec:
             mountPath: /etc/passwd
             subPath: passwd
           - name: dsc102-datasets
-            mountPath: /datasets/ds102-wi22-a00-public
+            mountPath: /ds102-wi22-a00-public
             subPath: "ds102-wi22-a00-public"
           - name: home
             mountPath: /home/$USERNAME
@@ -147,7 +147,7 @@ spec:
             mountPath: /etc/passwd
             subPath: passwd
           - name: ds102-datasets
-            mountPath: /datasets/ds102-wi22-a00-public
+            mountPath: /ds102-wi22-a00-public
             subPath: "ds102-wi22-a00-public"
           image: ucsdets/spark-master:2022.1.1
           imagePullPolicy: IfNotPresent
