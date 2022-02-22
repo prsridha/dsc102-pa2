@@ -146,6 +146,8 @@ spec:
           - name: passwd
             mountPath: /etc/passwd
             subPath: passwd
+          - name: home
+            mountPath: /home/$USERNAME
           - name: ds102-datasets
             mountPath: /ds102-wi22-a00-public
             subPath: "ds102-wi22-a00-public"
@@ -176,6 +178,9 @@ spec:
       - name: ds102-datasets
         persistentVolumeClaim:
           claimName: dsmlp-datasets
+      - name: home
+        persistentVolumeClaim:
+          claimName: home
 ---
 kind: Service
 apiVersion: v1
