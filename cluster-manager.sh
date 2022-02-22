@@ -3,7 +3,6 @@ exec > >(tee -i cluster-manager.log)
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [ "$#" -eq 1 ] && [ $1 == 'create' ]; then
 	JUPYTER_TOKEN=$(openssl rand -hex 16)
-	# Keeping this for 2. We cannot go beyond 3
 	NUM_WORKERS=3
         CLUSTER_UID=$(id -u)
 	cat $BASEDIR/spark-cluster.yaml.template | sed -e "s/\$JUPYTER_TOKEN/$JUPYTER_TOKEN/" -e "s/\$NUM_WORKERS/$NUM_WORKERS/" -e "s/\$USERNAME/$USER/g" -e "s/\$USER_ID/$CLUSTER_UID/g" > $BASEDIR/spark-cluster.yaml
